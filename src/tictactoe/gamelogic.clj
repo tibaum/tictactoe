@@ -3,7 +3,6 @@
 (defn- number-of-moves [gameboard]
   (count (filter #(not (= :_ %1)) gameboard)))
 
-
 (defn- winner-on-tiles [x y z gameboard]
   (let [first-tile (nth gameboard x)
         second-tile (nth gameboard y)
@@ -12,7 +11,6 @@
           (= first-tile second-tile third-tile)
           (not (= first-tile :_)))
       true false)))
-
 
 (defn- winner [gameboard]
   (cond
@@ -26,14 +24,12 @@
     (winner-on-tiles 2 4 6 gameboard) (nth gameboard 2)
     :else :_))
 
-
 (defn- next-player [gameboard]
   (cond
     (= 0 (count (filter #(= :_ %1) gameboard))) :_
     (not (= (winner gameboard) :_)) :_
     (even? (number-of-moves gameboard)) :x
     :else :o))
-
 
 (defn- move-player [gameboard tile]
   (let [player (next-player gameboard)
@@ -42,12 +38,10 @@
         (assoc gameboard tile player)
         gameboard)))
 
-
 (defn move [command]
   (let [gameboard (:gameboard command)
         tile (- (:tile command) 1)]
       (move-player gameboard tile)))
-
 
 (defn state [gameboard]
   {:winner (winner gameboard)

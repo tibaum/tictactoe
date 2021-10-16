@@ -1,0 +1,18 @@
+* {
+	-fx-font-family: 'sans-serif'
+ }
+
+.button {
+	-fx-font-size: 30;
+}
+
+#new-game {
+	-fx-font-size: 12;
+}
+
+#game-state {
+	-fx-background-color: grey;
+	-fx-alignment: CENTER;
+	-fx-text-fill: white;
+	-fx-background-radius: 0;
+}

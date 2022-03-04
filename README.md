@@ -2,7 +2,7 @@
 
 The Tic Tac Toe game built with Clojure and JavaFX.
 
-![Image of the app](tictactoe.png "Image of the app")
+<img alt="Image of the app" src="tictactoe.png" width="430">
 
 ## Building the application with Leiningen
 ```bash
